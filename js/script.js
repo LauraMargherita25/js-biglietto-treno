@@ -25,51 +25,38 @@ if (userAge < 18){
     document.getElementById("my_output").innerHTML = `Il tuo biglietto costa: ${finalPrice}`;
 }*/
 
-let inputName = document.querySelector("#name");
-let inputKm = document.querySelector("#counnt_km"); 
-let inputAge = document.querySelector("#select_age"); 
-let outputArea = document.getElementById("output");
-let btnGenerate = document.querySelector("#generate"); 
-let btnClear = document.querySelector("#clear"); 
 
 
+/* ### RIPASSO ### */
+// linko l'input età inserito dallo user all'elemnto eleUserAge
+let eleUserAge = parseInt(document.getElementById("user_age").value);
+console.log(eleUserAge);
+
+// linko l'input km inserito dallo user all'elemnto eleKm
+let eleUserKm = parseInt(document.getElementById("user_km").value);
+console.log(eleUserKm);
+
+// calcolo il prerzzo finale senza sconti
 const pricePerKm = 0.21;
-const discountUnder18 = 20;
-const discountOver65 = 40;
 
+let eleFinalPrice = eleUserKm * pricePerKm;
+console.log("Sono il prezzo finale senza sconti" + " " + eleFinalPrice)
 
-btnGenerate.addEventListener("click", function(){
-    
-    let userName = inputName.value;
-    let userKm = parseFloat(inputKm.value);
-    let userAge = inputAge.value;
-    
-    if (isNaN(userKm)){
-        alert("Devi inserire un numero");
-    }else{
-    
-        let discount = 0;
-        if (userAge == "minorenne"){
-            discount = discountUnder18;
-        }else if(userAge == "senior"){
-            discount = discountOver65;
-        }else{
-            discount = 0;
-        }
-        
-        let finalPrice = pricePerKm * userKm;
-        let discountValue = finalPrice * discount / 100;
-        
-        finalPrice = (finalPrice - discountValue).toFixed(2);
-        
-        outputArea.innerHTML = `Ciao ${userName}, il tuo biglietto costa: ${finalPrice}`;
-    }
+// calcolo lo sconto per gli under 18
+const discount20 = eleFinalPrice * 20 /100;
+console.log("Sono lo sconto del 20%" + " " + discount20);
 
-})
+// calcolo lo sconto per gli over 65
+const discount40 = eleFinalPrice * 40 /100;
+console.log("Sono lo sconto del 40%" + " " + discount40);
 
-btnClear.addEventListener("click", function(){
-    inputName.value = " ";
-    inputKm.value = " ";
-    inputAge.value = " ";
-    outputArea.innerHTML = " ";
-})
+// condizione per calcolo prezzo finale in caso di sconto
+if (eleUserAge <= 18) {
+    eleFinalPrice -= discount20;
+    console.log("Sono il prezzo finale scontato del 20%" + " " + eleFinalPrice);
+} else if (eleUserAge >= 65) {
+    eleFinalPrice -= discount40;
+    console.log("Sono il prezzo finale scontato del 40%" + " " + eleFinalPrice);
+}
+
+document.getElementById("final_price").value = parseFloat(eleFinalPrice.toFixed(2));    

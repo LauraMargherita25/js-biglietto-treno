@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
-body{
-    margin: 100px;
+.container{
+    height: 100vh;
+
+    display: flex;
+
+    background-color: aqua;
+}
+
+.box{
+    width: 800px;
+    height: 400px;
+
+    margin: auto;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

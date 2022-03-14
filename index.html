@@ -6,29 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>js-biglietto-treno</title>
+
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     
-    <!-- <h1 id="my_output"></h1> -->
+    <div class="container">
+        <div class="box">
+            <label for="user_age">Age: </label>
+            <input type="text" id="user_age">
 
-    <label for="name"></label>
-    <input type="text" id="name">
+            <label for="user_km">Km: </label>
+            <input type="text" id="user_km">
 
-    <label for="counnt_km"></label>
-    <input type="number" name="" id="counnt_km">
+            <label for="final_price">Totale: </label>
+            <input type="text" id="final_price">
+        </div>
+    </div>
 
-    <select name="age" id="select_age"> 
-        <option value="minorenne">Minorenne</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="senior">Over 65</option>
-    </select>
-
-    <button id="generate">Genera</button>
-    <button id="clear">Annulla</button>
-
-    <div id="output"></div>
-
-
+    <!-- script -->
     <script src="js/script.js"></script>
 </body>
 </html>
