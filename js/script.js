@@ -59,4 +59,4 @@ if (eleUserAge <= 18) {
     console.log("Sono il prezzo finale scontato del 40%" + " " + eleFinalPrice);
 }
 
-document.getElementById("final_price").value = parseFloat(eleFinalPrice.toFixed(2));    
+document.getElementById("final_price").innerHTML = `Il tuo biglietto costa: ${parseFloat(eleFinalPrice.toFixed(2))}£`;    
