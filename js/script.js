@@ -1,12 +1,3 @@
-/*document.getElementById("my_output").innerHTML = "Hi everyone!"
-
-
-let supercalifragilistichespiralidoso = 10;
-let salagadulamegicabula = supercalifragilistichespiralidoso * 1500 - 30;
-
-console.log(salagadulamegicabula)*/
-
-
 /*const pricePerKm = 0.21;
 let userKm = prompt("Quanti Km devi percorrere?");
 let userAge = prompt("Quanti anni hai?");
@@ -33,14 +24,14 @@ let eleUserAge = parseInt(document.getElementById("user_age").value);
 console.log(eleUserAge);
 
 // linko l'input km inserito dallo user all'elemnto eleKm
-let eleUserKm = parseInt(document.getElementById("user_km").value);
+let eleUserKm = parseFloat(document.getElementById("user_km").value);
 console.log(eleUserKm);
 
 // calcolo il prerzzo finale senza sconti
 const pricePerKm = 0.21;
 
 let eleFinalPrice = eleUserKm * pricePerKm;
-console.log("Sono il prezzo finale senza sconti" + " " + eleFinalPrice)
+console.log("Sono il prezzo finale senza sconti:" + " " + eleFinalPrice)
 
 // calcolo lo sconto per gli under 18
 const discount20 = eleFinalPrice * 20 /100;
